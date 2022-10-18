@@ -1,27 +1,126 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
 
-    <h1>FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN</h1>
-    <h2>Terdiri dari prodi :</h2>
-    <p>Bimbingan Dan Konseling	S1
-        Pendidikan Bahasa Indonesia	S1
-        Pendidikan Bahasa Inggris	S1
-        Pendidikan Biologi	S1
-        Pendidikan Fisika	S1
-        Pendidikan Guru Pendidikan Anak Usia Dini	S1
-        Pendidikan Guru Sekolah Dasar	S1
-        Pendidikan Ilmu Pengetahuan Alam	S1
-        Pendidikan Khusus	S1
-        Pendidikan Kimia	S1
-        Pendidikan Matematika	S1
-        Pendidikan Non Formal	S1
-        Pendidikan Pancasila dan Kewarganegaraan	S1
-        Pendidikan Sejarah	S1
-        Pendidikan Seni Pertunjukan	S1
-        Pendidikan Sosiologi	S1
-        Pendidikan Vokasional Teknik Elektro	S1
-        Pendidikan Vokasional Teknik Mesin	S1
-        Pendidikan Profesi Guru	Profesi</p>
+    <center>
+        <h1>FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN</h1>
+      
+    </center>
+    <p></p>
+    <center>
+        <h4 style="background-color: rgba(255, 255, 255, 0.568) ;">Sejarah</h4>
+    </center>
     
+    <p style="font-family: 'times new roman'">Fakultas Keguruan dan Ilmu Pendidikan (FKIP) Universitas Sultan Ageng Tirtayasa (Untirta) memiliki 18 program studi. Program studi FKIP terbanyak bidang pendidikan yang Untirta miliki tersebut paling banyak di minati pada Seleksi Nasional Masuk Perguruan Tinggi Negeri (SNMPTN), Seleksi Bersama Masuk Perguruan Tinggi Negeri (SBMPTN) menjadi fakultas yang paling banyak di minati oleh calon mahasiswa baru.</p>
+    <p style="font-family: 'times new roman'">{{ gbrumum }}</p>
+    <p style="font-family: 'times new roman'">FKIP Untirta sudah ada sejak lama pada awal berdiri FKIP Untirta memiliki dua program studi yakni Program Studi Administrasi Pendidikan (AdPend) dan Program Studi Pendidikan Luar Sekolah (PLS) dengan jenjang pendidikan Sarjana (S.1).</p>
+    <p style="font-family: 'times new roman'">{{ gbrumum }}</p>
+    <p style="font-family: 'times new roman'">FKIP Untirta terus berkembang sesuai dengan tuntutan masyarakat, sehingga FKIP Untirta kembali membuka program studi yakni Program Pendidikan Guru Taman Kanak-kanak (PGTK) pada 1994, dan beberapa tahun kemudian membuka kembali Program Studi Pendidikan Bahasa Inggris, Pendidikan Biologi dan Pendidikan Matematika. Program studi PGTK telah diubah menjadi Program Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD) dengan surat keputusan Menteri Pendidikan Nasional Nomor: 105/D/O/2010.</p>
+
+    <center>
+        <h4 style="background-color: rgba(248, 242, 248, 0.43);">Program Studi</h4>
+    </center>
+    
+    <h5>Daftar Prodi :</h5>
+    <p>1. Pendidikan Matematika</p>
+    <p>2. Pendidikan Biologi</p>
+    <p>3. Pendidikan Kimia</p>
+    <p>4. Pendidikan Fisika</p>
+    <p>5. Pendidikan Non Formal</p>
+    <p>6. Pendidikan Bahasa Indonesia</p>
+    <p>7. Pendidikan Bahasa Inggris</p>
+    <p>8. Pendidikan Guru Sekolah Dasar</p>
+    <p>9. Pendidikan Guru Pendidikan Anak Usia Dini</p>
+    <p>10. Pendidikan Ilmu Pengetahuan Alam</p>
+    <p>11. Pendidikan Khusus</p>
+    <p>12. Pendidikan Pancasila dan Kewarganegaraan</p>
+    <p>13. Pendidikan Sejarah</p>
+    <p>14. Pendidikan Seni Pertunjukan</p>
+    <p>15. Pendidikan Sosiologi</p>
+    <p>16. Pendidikan Vokasional Teknik Mesin</p>
+    <p>17. Pendidikan Vokasional Teknik Elektro</p>
+    <p>18. Bimbingan Konseling</p>
+    
+    <br>
+    <h2>Daftar Nama Dosen FKIP</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIP</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Fakultas</th>
+            <th>Prodi</th>
+            <th>Alamat</th>
+        </tr>
+        {% for dosen in dataDosen %}
+        <tr>
+            <td>{{ dosen.nip }}</td>
+            <td>{{ dosen.nama }}</td>
+            <td>{{ dosen.tanggal_lahir }}</td>
+            <td><img src="{{ dosen.foto }}" alt="Foto" width="100px"></td>
+            <td>{{ dosen.email }}</td>
+            <td>{{ dosen.fakultas }}</td>
+            <td>{{ dosen.prodi }}</td>
+            <td>{{ dosen.alamat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Daftar Nama Tenaga Pendidik FKIP</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIP</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Unit</th>
+            <th>Alamat</th>
+        </tr>
+        {% for tenagaPendidik in dataTenagaPendidik %}
+        <tr>
+            <td>{{ tenagaPendidik.nip }}</td>
+            <td>{{ tenagaPendidik.nama }}</td>
+            <td>{{ tenagaPendidik.tanggal_lahir }}</td>
+            <td><img src="{{ tengaPendidik.foto }}" alt="Foto" width="100px"></td>
+            <td>{{ tenagaPendidik.email }}</td>
+            <td>{{ tenagaPendidik.unit }}</td>
+            <td>{{ tenagaPendidik.alamat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h2>Daftar Nama Mahasiswa FKIP</h2>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Fakultas</th>
+            <th>Prodi</th>
+            <th>Alamat</th>
+        </tr>
+        {% for mahasiswa in dataMahasiswa %}
+        <tr>
+            <td>{{ mahasiswa.nim }}</td>
+            <td>{{ mahasiswa.nama }}</td>
+            <td>{{ mahasiswa.tanggal_lahir }}</td>
+            <td><img src="{{ mahasiswa.foto }}" alt="Foto" width="100px"></td>
+            <td>{{ mahasiswa.email }}</td>
+            <td>{{ mahasiswa.fakultas }}</td>
+            <td>{{ mahasiswa.prodi }}</td>
+            <td>{{ mahasiswa.alamat }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% for judul in title %} 
+    <li>{{ judul }}</li>
+    {% endfor %}
+
+
 {% endblock %}
